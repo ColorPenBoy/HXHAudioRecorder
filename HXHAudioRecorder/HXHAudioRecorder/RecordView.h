@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^touchesBeginBlock)();
-typedef void (^touchesEndedBlock)();
-typedef void (^touchesCancelledBlock)();
+typedef void (^RecordSuccessBlock)(NSArray * voicesArray);
 
+@class VoiceModel;
 @interface RecordView : UIView
+
+@property (weak, nonatomic) IBOutlet UILabel * timeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel * titleLabel;
 
-@property (nonatomic, copy) touchesBeginBlock touchesBeginBlock;
-@property (nonatomic, copy) touchesEndedBlock touchesEndedBlock;
-@property (nonatomic, copy) touchesCancelledBlock touchesCancelledBlock;
+@property (nonatomic, copy) RecordSuccessBlock recordSuccessBlock;
+
+- (void)playVoiceWithModel:(VoiceModel *)model;
 
 @end

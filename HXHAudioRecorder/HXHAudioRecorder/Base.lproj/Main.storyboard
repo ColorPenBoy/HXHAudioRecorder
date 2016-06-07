@@ -26,14 +26,26 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C92-8j-IZ1">
+                                        <rect key="frame" x="283" y="58" width="34" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="p5k-Hv-1SA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.089481004759999996" green="1" blue="0.97183576760000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="vIO-dc-VVp" firstAttribute="centerX" secondItem="jit-ag-g94" secondAttribute="centerX" id="Cwo-GF-D7w"/>
                                     <constraint firstAttribute="height" constant="80" id="Fy6-I3-9ka"/>
+                                    <constraint firstAttribute="bottom" secondItem="C92-8j-IZ1" secondAttribute="bottom" constant="1" id="SpQ-HN-Nys"/>
+                                    <constraint firstItem="C92-8j-IZ1" firstAttribute="centerX" secondItem="jit-ag-g94" secondAttribute="centerX" id="bhV-vs-bVg"/>
                                     <constraint firstItem="vIO-dc-VVp" firstAttribute="centerY" secondItem="jit-ag-g94" secondAttribute="centerY" id="huV-u7-Ta3"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="timeLabel" destination="C92-8j-IZ1" id="RTC-wg-MhO"/>
                                     <outlet property="titleLabel" destination="vIO-dc-VVp" id="fyl-YK-JLS"/>
                                 </connections>
                             </view>

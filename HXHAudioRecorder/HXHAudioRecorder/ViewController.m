@@ -9,16 +9,16 @@
 #import "ViewController.h"
 #import "RecordView.h"
 #import "VoiceCell.h"
+#import "VoiceModel.h"
 
 static NSString * const VOICE_CELL = @"voiceCell";
-static NSString * const VOICE_ARCHIVE = @"voice.archive";
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet RecordView *recordView;
 
-@property (strong, nonatomic) NSMutableArray * mVoiceArray;
+@property (copy, nonatomic) NSMutableArray * dataArray;
 
 @end
 
@@ -26,17 +26,19 @@ static NSString * const VOICE_ARCHIVE = @"voice.archive";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.mVoiceArray = [NSMutableArray array];
-    
+        
     [self.mainTableView registerNib:[UINib nibWithNibName:@"VoiceCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:VOICE_CELL];
 
+    self.recordView.recordSuccessBlock = ^(NSArray * voicesArray){
+        self.dataArray = [NSMutableArray arrayWithArray:voicesArray];
+        [self.mainTableView reloadData];
+    };
 }
 
 
 #pragma mark - UITabelViewDataSource && UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [self.dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,20 +58,11 @@ static NSString * const VOICE_ARCHIVE = @"voice.archive";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击播放录音 - %@",@(indexPath.row));
+    VoiceModel * model = self.dataArray[indexPath.row];
+    [self.recordView playVoiceWithModel:model];
 }
 
-#pragma mark - Voice Archiving
-- (void)saveMemos {
-    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:self.mVoiceArray];
-    [fileData writeToURL:[self archiveURL] atomically:YES];
-}
 
-- (NSURL *)archiveURL {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsDir = [paths objectAtIndex:0];
-    NSString *archivePath = [docsDir stringByAppendingPathComponent:VOICE_ARCHIVE];
-    return [NSURL fileURLWithPath:archivePath];
-}
 
 
 
