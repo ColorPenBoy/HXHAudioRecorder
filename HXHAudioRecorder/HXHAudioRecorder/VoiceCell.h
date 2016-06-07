@@ -10,8 +10,8 @@
 
 @interface VoiceCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *centerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 
 @end

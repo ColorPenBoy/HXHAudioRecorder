@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^touchesBeginBlock)();
+typedef void (^touchesEndedBlock)();
+typedef void (^touchesCancelledBlock)();
+
 @interface RecordView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel * titleLabel;
 
+@property (nonatomic, copy) touchesBeginBlock touchesBeginBlock;
+@property (nonatomic, copy) touchesEndedBlock touchesEndedBlock;
+@property (nonatomic, copy) touchesCancelledBlock touchesCancelledBlock;
 
 @end

@@ -16,9 +16,10 @@
 		F043D76C1D057BC6001B3031 /* HXHAudioRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F043D76B1D057BC6001B3031 /* HXHAudioRecorderTests.m */; };
 		F043D7771D057C7D001B3031 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F043D7761D057C7D001B3031 /* AVFoundation.framework */; };
 		F043D77A1D057E13001B3031 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = F043D7791D057E13001B3031 /* RecordView.m */; };
-		F0742DAD1D0669C200E17CD5 /* VoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0742DAC1D0669C200E17CD5 /* VoiceCell.m */; };
 		F0742DB01D066B0E00E17CD5 /* VoiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0742DAF1D066B0E00E17CD5 /* VoiceModel.m */; };
 		F0742DB31D066DB400E17CD5 /* RecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0742DB21D066DB400E17CD5 /* RecordController.m */; };
+		F0742E031D069E9D00E17CD5 /* VoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0742E011D069E9D00E17CD5 /* VoiceCell.m */; };
+		F0742E041D069E9D00E17CD5 /* VoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0742E021D069E9D00E17CD5 /* VoiceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +49,13 @@
 		F043D7761D057C7D001B3031 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F043D7781D057E13001B3031 /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
 		F043D7791D057E13001B3031 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
-		F0742DAB1D0669C200E17CD5 /* VoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceCell.h; sourceTree = "<group>"; };
-		F0742DAC1D0669C200E17CD5 /* VoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceCell.m; sourceTree = "<group>"; };
 		F0742DAE1D066B0E00E17CD5 /* VoiceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceModel.h; sourceTree = "<group>"; };
 		F0742DAF1D066B0E00E17CD5 /* VoiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceModel.m; sourceTree = "<group>"; };
 		F0742DB11D066DB400E17CD5 /* RecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordController.h; sourceTree = "<group>"; };
 		F0742DB21D066DB400E17CD5 /* RecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordController.m; sourceTree = "<group>"; };
+		F0742E001D069E9D00E17CD5 /* VoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceCell.h; sourceTree = "<group>"; };
+		F0742E011D069E9D00E17CD5 /* VoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceCell.m; sourceTree = "<group>"; };
+		F0742E021D069E9D00E17CD5 /* VoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoiceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,9 @@
 				F043D7791D057E13001B3031 /* RecordView.m */,
 				F043D7571D057BC6001B3031 /* ViewController.h */,
 				F043D7581D057BC6001B3031 /* ViewController.m */,
-				F0742DAB1D0669C200E17CD5 /* VoiceCell.h */,
-				F0742DAC1D0669C200E17CD5 /* VoiceCell.m */,
+				F0742E001D069E9D00E17CD5 /* VoiceCell.h */,
+				F0742E011D069E9D00E17CD5 /* VoiceCell.m */,
+				F0742E021D069E9D00E17CD5 /* VoiceCell.xib */,
 				F0742DAE1D066B0E00E17CD5 /* VoiceModel.h */,
 				F0742DAF1D066B0E00E17CD5 /* VoiceModel.m */,
 				F043D75A1D057BC6001B3031 /* Main.storyboard */,
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0742E041D069E9D00E17CD5 /* VoiceCell.xib in Resources */,
 				F043D7611D057BC6001B3031 /* LaunchScreen.storyboard in Resources */,
 				F043D75E1D057BC6001B3031 /* Assets.xcassets in Resources */,
 				F043D75C1D057BC6001B3031 /* Main.storyboard in Resources */,
@@ -235,12 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0742DAD1D0669C200E17CD5 /* VoiceCell.m in Sources */,
 				F043D7591D057BC6001B3031 /* ViewController.m in Sources */,
 				F043D77A1D057E13001B3031 /* RecordView.m in Sources */,
 				F043D7561D057BC6001B3031 /* AppDelegate.m in Sources */,
 				F0742DB01D066B0E00E17CD5 /* VoiceModel.m in Sources */,
 				F043D7531D057BC6001B3031 /* main.m in Sources */,
+				F0742E031D069E9D00E17CD5 /* VoiceCell.m in Sources */,
 				F0742DB31D066DB400E17CD5 /* RecordController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
