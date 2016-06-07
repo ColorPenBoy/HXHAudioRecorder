@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "RecordView.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (weak, nonatomic) IBOutlet RecordView *recordView;
 
 @end
 
@@ -16,7 +20,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CELLID"];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELLID" forIndexPath:indexPath];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"录音 - %@",@(indexPath.row)];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"点击播放录音 - %@",@(indexPath.row));
 }
 
 - (void)didReceiveMemoryWarning {
