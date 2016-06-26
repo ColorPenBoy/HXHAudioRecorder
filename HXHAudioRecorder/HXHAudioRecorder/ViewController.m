@@ -59,12 +59,9 @@ static NSString * const VOICE_CELL = @"voiceCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击播放录音 - %@",@(indexPath.row));
     VoiceModel * model = self.dataArray[indexPath.row];
+    NSLog(@"Voice Moedl url - %@",model.url);
     [self.recordView playVoiceWithModel:model];
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

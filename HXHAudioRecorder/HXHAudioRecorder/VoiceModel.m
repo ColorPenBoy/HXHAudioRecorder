@@ -8,8 +8,8 @@
 
 #import "VoiceModel.h"
 
-static NSString * const TITLE_KEY       = @"title";
 static NSString * const URL_KEY         = @"url";
+static NSString * const TITLE_KEY       = @"title";
 static NSString * const DATE_STRING_KEY = @"dateString";
 static NSString * const TIME_STRING_KEY = @"timeString";
 
@@ -33,8 +33,8 @@ static NSString * const TIME_STRING_KEY = @"timeString";
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:self.title forKey:TITLE_KEY];
     [coder encodeObject:self.url forKey:URL_KEY];
+    [coder encodeObject:self.title forKey:TITLE_KEY];
     [coder encodeObject:self.dateString forKey:DATE_STRING_KEY];
     [coder encodeObject:self.timeString forKey:TIME_STRING_KEY];
 }
@@ -42,8 +42,8 @@ static NSString * const TIME_STRING_KEY = @"timeString";
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if (self) {
-        _title = [decoder decodeObjectForKey:TITLE_KEY];
-        _url = [decoder decodeObjectForKey:URL_KEY];
+        _url        = [decoder decodeObjectForKey:URL_KEY];
+        _title      = [decoder decodeObjectForKey:TITLE_KEY];
         _dateString = [decoder decodeObjectForKey:DATE_STRING_KEY];
         _timeString = [decoder decodeObjectForKey:TIME_STRING_KEY];
     }

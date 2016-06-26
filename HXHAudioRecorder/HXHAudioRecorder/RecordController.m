@@ -24,15 +24,27 @@
     self = [super init];
     if (self) {
         NSString *tmpDir = NSTemporaryDirectory();
-        NSString *filePath = [tmpDir stringByAppendingPathComponent:@"memo.caf"];
+        NSString *filePath = [tmpDir stringByAppendingPathComponent:@"memo.wav"];
         NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+        NSLog(@"Voice Path - %@", fileURL);
+        
+//        NSDictionary *settings = @{
+//                                   AVFormatIDKey : @(kAudioFormatAppleIMA4),
+//                                   AVSampleRateKey : @44100.0f,
+//                                   AVNumberOfChannelsKey : @1,
+//                                   AVEncoderBitDepthHintKey : @16,
+//                                   AVEncoderAudioQualityKey : @(AVAudioQualityMedium)
+//                                   };
+        
         
         NSDictionary *settings = @{
-                                   AVFormatIDKey : @(kAudioFormatAppleIMA4),
-                                   AVSampleRateKey : @44100.0f,
+                                   AVFormatIDKey : @(kAudioFormatLinearPCM),
+                                   AVSampleRateKey : @8000.00f,
                                    AVNumberOfChannelsKey : @1,
-                                   AVEncoderBitDepthHintKey : @16,
-                                   AVEncoderAudioQualityKey : @(AVAudioQualityMedium)
+                                   AVLinearPCMBitDepthKey : @16,
+                                   AVLinearPCMIsNonInterleaved : @NO,
+                                   AVLinearPCMIsFloatKey : @NO,
+                                   AVLinearPCMIsBigEndianKey : @NO
                                    };
         
         NSError *error;
@@ -71,7 +83,7 @@
 - (void)saveRecordingWithName:(NSString *)name completionHandler:(THRecordingSaveCompletionHandler)handler {
     
     NSTimeInterval timestamp = [NSDate timeIntervalSinceReferenceDate];
-    NSString *filename = [NSString stringWithFormat:@"%@_%.0f.m4a", name, timestamp];
+    NSString *filename = [NSString stringWithFormat:@"%@_%.0f.wav", name, timestamp];
     
     NSString *docsDir = [self documentsDirectory];
     NSString *destPath = [docsDir stringByAppendingPathComponent:filename];
